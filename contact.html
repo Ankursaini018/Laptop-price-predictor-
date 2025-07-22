@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Laptop Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:2em;">💻</span>
+                <div style="font-size:1.5em; font-weight:bold; color:#00c6ff; letter-spacing:1px;">Laptop Price Predictor</div>
+            </div>
+            <nav style="display:flex; gap:40px;">
+                <a href="/">Home</a>
+                <a href="/history">History</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Contact Us <span>📬</span></h1>
+        <form method="POST">
+            <label>Name:
+                <input type="text" name="name" required>
+            </label>
+            <label>Email:
+                <input type="email" name="email" required>
+            </label>
+            <label>Message:
+                <textarea name="message" rows="4" required></textarea>
+            </label>
+            <input type="submit" value="Send Message">
+        </form>
+        {% if request.method == 'POST' %}
+        <div style="margin-top:32px; text-align:center; color:#00c6ff; font-size:1.2em;">
+            Thank you for reaching out! We'll get back to you soon.
+        </div>
+        {% endif %}
+    </div>
+    <footer style="background:#232526; color:#f4f4f4; padding:32px 0 16px 0; text-align:center; margin-top:40px; border-top:1px solid #333;">
+        <h2>Contact <span>📬</span></h2>
+        <div style="font-size:1.1em; display:flex; flex-wrap:wrap; justify-content:center; gap:32px; margin-bottom:12px;">
+            <span>📱 WhatsApp: <a href='https://wa.me/919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>📸 Instagram: <a href='https://instagram.com/yourprofile' style='color:#00c6ff;'>@yourprofile</a></span>
+            <span>☎️ Phone: <a href='tel:+919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>✉️ Email: <a href='mailto:ankur@example.com' style='color:#00c6ff;'>ankur@example.com</a></span>
+        </div>
+        <div style="color:#aaa; font-size:0.95em;">&copy; {{ 2024 }} Laptop Price Predictor. All rights reserved.</div>
+    </footer>
+</body>
+</html>

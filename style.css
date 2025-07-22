@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #232526, #414345);
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: #232526;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #00c6ff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(34, 36, 38, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    padding: 40px 30px;
+}
+
+h1, h2, h3 {
+    color: #00c6ff;
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+form label {
+    flex: 1 1 200px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 16px;
+    background: #2c2f34;
+    color: #f4f4f4;
+    font-size: 1em;
+}
+
+button, input[type="submit"] {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #232526;
+    border-radius: 12px;
+    overflow: hidden;
+}
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+}
+th {
+    background: #00c6ff;
+    color: #fff;
+}
+tr:nth-child(even) {
+    background: #2c2f34;
+}
+tr:nth-child(odd) {
+    background: #232526;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 8px;
+    }
+    form {
+        flex-direction: column;
+        gap: 0;
+    }
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+} 

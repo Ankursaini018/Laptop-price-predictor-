@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History - Laptop Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:2em;">💻</span>
+                <div style="font-size:1.5em; font-weight:bold; color:#00c6ff; letter-spacing:1px;">Laptop Price Predictor</div>
+            </div>
+            <nav style="display:flex; gap:40px;">
+                <a href="/">Home</a>
+                <a href="/history">History</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Prediction History <span>📜</span></h1>
+        <div class="table-container">
+        {% if history and history|length > 0 %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Processor</th>
+                        <th>RAM</th>
+                        <th>SSD</th>
+                        <th>HDD</th>
+                        <th>OS</th>
+                        <th>Graphics</th>
+                        <th>Touch</th>
+                        <th>MS Office</th>
+                        <th>Warranty</th>
+                        <th>Predicted Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in history %}
+                    <tr>
+                        <td>{{ item.brand }}</td>
+                        <td>{{ item.processor_brand }} {{ item.processor_name }} {{ item.processor_gnrtn }}</td>
+                        <td>{{ item.ram_gb }} {{ item.ram_type }}</td>
+                        <td>{{ item.ssd }}</td>
+                        <td>{{ item.hdd }}</td>
+                        <td>{{ item.os }} ({{ item.os_bit }}-bit)</td>
+                        <td>{{ item.graphic_card_gb }} GB</td>
+                        <td>{{ item.Touchscreen }}</td>
+                        <td>{{ item.msoffice }}</td>
+                        <td>{{ item.warranty }}</td>
+                        <td style="color:#00c6ff; font-weight:bold;">₹ {{ item.prediction }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align:center; color:#aaa;">No predictions yet. Try predicting a laptop price!</p>
+        {% endif %}
+        </div>
+    </div>
+    <footer style="background:#232526; color:#f4f4f4; padding:32px 0 16px 0; text-align:center; margin-top:40px; border-top:1px solid #333;">
+        <h2>Contact <span>📬</span></h2>
+        <div style="font-size:1.1em; display:flex; flex-wrap:wrap; justify-content:center; gap:32px; margin-bottom:12px;">
+            <span>📱 WhatsApp: <a href='https://wa.me/919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>📸 Instagram: <a href='https://instagram.com/yourprofile' style='color:#00c6ff;'>@yourprofile</a></span>
+            <span>☎️ Phone: <a href='tel:+919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>✉️ Email: <a href='mailto:ankur@example.com' style='color:#00c6ff;'>ankur@example.com</a></span>
+        </div>
+        <div style="color:#aaa; font-size:0.95em;">&copy; {{ 2024 }} Laptop Price Predictor. All rights reserved.</div>
+    </footer>
+</body>
+</html>

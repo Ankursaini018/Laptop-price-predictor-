@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Laptop Price</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:2em;">💻</span>
+                <div style="font-size:1.5em; font-weight:bold; color:#00c6ff; letter-spacing:1px;">Laptop Price Predictor</div>
+            </div>
+            <nav style="display:flex; gap:40px;">
+                <a href="/">Home</a>
+                <a href="/history">History</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Predict Your Laptop Price</h1>
+        <img src="{{ url_for('static', filename='gaming-laptops-og-image.webp') }}" alt="Laptop" style="max-width:40%; border-radius:12px; float:right; margin-left:24px; margin-bottom:24px;">
+        <form method="POST">
+            <label>Brand:
+                <select name="brand" required>
+                    <option>ASUS</option><option>Lenovo</option><option>acer</option><option>Avita</option><option>HP</option><option>DELL</option><option>MSI</option><option>APPLE</option>
+                </select>
+            </label>
+            <label>Processor Brand:
+                <select name="processor_brand" required>
+                    <option>Intel</option><option>AMD</option><option>M1</option>
+                </select>
+            </label>
+            <label>Processor Name:
+                <select name="processor_name" required>
+                    <option>Core i3</option><option>Core i5</option><option>Celeron Dual</option><option>Ryzen 5</option><option>Core i7</option><option>Core i9</option><option>M1</option><option>Pentium Quad</option><option>Ryzen 3</option><option>Ryzen 7</option><option>Ryzen 9</option>
+                </select>
+            </label>
+            <label>Processor Generation:
+                <select name="processor_gnrtn" required>
+                    <option>10th</option><option>Not Available</option><option>11th</option><option>7th</option><option>8th</option><option>9th</option><option>4th</option><option>12th</option>
+                </select>
+            </label>
+            <label>RAM (GB):
+                <input type="text" name="ram_gb" placeholder="e.g. 8" required>
+            </label>
+            <label>RAM Type:
+                <select name="ram_type" required>
+                    <option>DDR4</option><option>LPDDR4</option><option>LPDDR4X</option><option>DDR5</option><option>DDR3</option><option>LPDDR3</option>
+                </select>
+            </label>
+            <label>SSD (GB):
+                <input type="text" name="ssd" placeholder="e.g. 512" required>
+            </label>
+            <label>HDD (GB):
+                <input type="text" name="hdd" placeholder="e.g. 1000" required>
+            </label>
+            <label>OS:
+                <select name="os" required>
+                    <option>Windows</option><option>DOS</option><option>Mac</option>
+                </select>
+            </label>
+            <label>OS Bit:
+                <select name="os_bit" required>
+                    <option>64</option><option>32</option>
+                </select>
+            </label>
+            <label>Graphic Card (GB):
+                <input type="text" name="graphic_card_gb" placeholder="e.g. 4" required>
+            </label>
+            <label>Touchscreen:
+                <select name="Touchscreen" required>
+                    <option>Yes</option><option>No</option>
+                </select>
+            </label>
+            <label>MS Office:
+                <select name="msoffice" required>
+                    <option>Yes</option><option>No</option>
+                </select>
+            </label>
+            <label>Warranty:
+                <select name="warranty" required>
+                    <option>1 Year</option><option>2 Year</option><option>3 Year</option><option>No Warranty</option>
+                </select>
+            </label>
+            <input type="submit" value="Predict Price">
+        </form>
+        {% if prediction is defined %}
+        <div style="margin-top:32px; text-align:center;">
+            <h2>Your Predicted Price:</h2>
+            <div style="font-size:2.5em; color:#00c6ff; font-weight:bold; background:#232526; display:inline-block; padding:18px 40px; border-radius:16px; box-shadow:0 2px 12px rgba(0,198,255,0.15);">
+                ₹ {{ prediction }}
+            </div>
+        </div>
+        {% endif %}
+        <div style="clear:both;"></div>
+    </div>
+    <footer style="background:#232526; color:#f4f4f4; padding:32px 0 16px 0; text-align:center; margin-top:40px; border-top:1px solid #333;">
+        <h2>Contact <span>📬</span></h2>
+        <div style="font-size:1.1em; display:flex; flex-wrap:wrap; justify-content:center; gap:32px; margin-bottom:12px;">
+            <span>📱 WhatsApp: <a href='https://wa.me/919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>📸 Instagram: <a href='https://instagram.com/yourprofile' style='color:#00c6ff;'>@yourprofile</a></span>
+            <span>☎️ Phone: <a href='tel:+919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>✉️ Email: <a href='mailto:ankur@example.com' style='color:#00c6ff;'>ankur@example.com</a></span>
+        </div>
+        <div style="color:#aaa; font-size:0.95em;">&copy; {{ 2024 }} Laptop Price Predictor. All rights reserved.</div>
+    </footer>
+</body>
+</html>

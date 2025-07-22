@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:2em;">💻</span>
+                <div style="font-size:1.5em; font-weight:bold; color:#00c6ff; letter-spacing:1px;">Laptop Price Predictor</div>
+            </div>
+            <nav style="display:flex; gap:40px;">
+                <a href="/">Home</a>
+                <a href="/history">History</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container" style="text-align:center;">
+        <h1>Welcome to the Laptop Price Predictor</h1>
+        <p style="font-size:1.2em; margin-bottom:32px;">Curious about how much your dream laptop should cost? Use our smart predictor to estimate laptop prices based on your chosen features. Fast, free, and fun!</p>
+        <a href="/project"><button>Predict Now</button></a>
+    </div>
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; margin-top:32px;">
+        <div style="flex:1 1 350px; background:rgba(0,198,255,0.07); border-radius:16px; padding:32px 24px; margin-bottom:24px; box-shadow:0 2px 12px rgba(0,198,255,0.08);">
+            <h2 style="color:#00c6ff;">Gaming Laptops <span>🎮</span></h2>
+            <img src="{{ url_for('static', filename='gaming-laptops-og-image.webp') }}" alt="Gaming Laptop" style="max-width:100%; border-radius:12px; margin-bottom:18px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+            <p style="font-size:1.1em;">Gaming laptops are designed for high performance, featuring powerful processors, dedicated graphics cards, high-refresh-rate displays, and advanced cooling systems. They are ideal for running modern games, 3D rendering, and other resource-intensive tasks. Key features include:</p>
+            <ul style="margin-left:18px;">
+                <li><strong>High-end GPUs:</strong> For smooth gameplay and graphics rendering.</li>
+                <li><strong>Fast CPUs:</strong> Multi-core processors for multitasking and gaming.</li>
+                <li><strong>Ample RAM:</strong> Usually 16GB or more for seamless performance.</li>
+                <li><strong>High-refresh-rate screens:</strong> 120Hz or above for fluid visuals.</li>
+                <li><strong>RGB keyboards &amp; aggressive design:</strong> Stylish and customizable.</li>
+                <li><strong>Advanced cooling:</strong> To handle heat during long gaming sessions.</li>
+            </ul>
+            <p>Gaming laptops are perfect for gamers, streamers, and creative professionals who need top-tier performance on the go.</p>
+        </div>
+        <div style="flex:1 1 350px; background:rgba(0,198,255,0.04); border-radius:16px; padding:32px 24px; margin-bottom:24px; box-shadow:0 2px 12px rgba(0,198,255,0.06);">
+            <h2 style="color:#00c6ff;">Office Laptops <span>💼</span></h2>
+            <img src="{{ url_for('static', filename='businesslaptops-2048px-233284-3x2-1.webp') }}" alt="Office Laptop" style="max-width:100%; border-radius:12px; margin-bottom:18px; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+            <p style="font-size:1.1em;">Office laptops are optimized for productivity, reliability, and portability. They focus on long battery life, lightweight design, and essential business features. These laptops are ideal for professionals, students, and anyone who needs a dependable device for everyday tasks. Key features include:</p>
+            <ul style="margin-left:18px;">
+                <li><strong>Efficient processors:</strong> For smooth multitasking and office applications.</li>
+                <li><strong>Lightweight &amp; portable:</strong> Easy to carry for work or travel.</li>
+                <li><strong>Long battery life:</strong> To last through meetings and workdays.</li>
+                <li><strong>Business features:</strong> Such as fingerprint readers, TPM, and MS Office support.</li>
+                <li><strong>Durable build:</strong> Designed to withstand daily use.</li>
+                <li><strong>Affordable options:</strong> Wide range of choices for different budgets.</li>
+            </ul>
+            <p>Office laptops are perfect for business users, students, and anyone who values efficiency, security, and portability in their daily computing.</p>
+        </div>
+    </div>
+    <footer style="background:#232526; color:#f4f4f4; padding:32px 0 16px 0; text-align:center; margin-top:40px; border-top:1px solid #333;">
+        <div style="max-width:800px; margin:0 auto 32px auto;">
+            <h2>About This Project <span>💻</span></h2>
+            <p>This website uses machine learning to predict the price of a laptop based on your selected features. It's designed to help you make smarter buying decisions and understand what factors influence laptop prices in the market.</p>
+            <h3>About the Creator <span>👨‍💻</span></h3>
+            <p>Created by <strong>Ankur Saini</strong>, a passionate data science enthusiast who loves building smart, user-friendly web apps.</p>
+        </div>
+        <h2>Contact <span>📬</span></h2>
+        <div style="font-size:1.1em; display:flex; flex-wrap:wrap; justify-content:center; gap:32px; margin-bottom:12px;">
+            <span>📱 WhatsApp: <a href='https://wa.me/919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>📸 Instagram: <a href='https://instagram.com/yourprofile' style='color:#00c6ff;'>@yourprofile</a></span>
+            <span>☎️ Phone: <a href='tel:+919999999999' style='color:#00c6ff;'>+91 99999 99999</a></span>
+            <span>✉️ Email: <a href='mailto:ankur@example.com' style='color:#00c6ff;'>ankur@example.com</a></span>
+        </div>
+        <div style="color:#aaa; font-size:0.95em;">&copy; {{ 2024 }} Laptop Price Predictor. All rights reserved.</div>
+    </footer>
+</body>
+</html>
